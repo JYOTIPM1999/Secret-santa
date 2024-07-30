@@ -1,9 +1,9 @@
 <template>
   <div class="draw">
     <h1>Draw Secret Santa🎅</h1>
-    <div>
+    <!-- <div>
       <h2 v-for="user in users">{{ user }}</h2>
-    </div>
+    </div> -->
     <button @click="drawNames">Draw</button>
   </div>
 </template>
@@ -15,7 +15,10 @@ import { useUsersStore } from "../store/useUsers";
 
 const router = useRouter();
 const store = useUsersStore();
-const users = computed(() => store.users);
+
+const users = ref([]);
+users.value = store.users;
+console.log(users);
 
 const drawNames = async () => {
   const shuffledUsers = [...users.value].sort(() => 0.5 - Math.random());

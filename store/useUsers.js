@@ -8,24 +8,28 @@ export const useUsersStore = defineStore("users", () => {
   const getUsers = async () => {
     try {
       const res = await axios.get("https://reqres.in/api/users");
-      console.log(res.data.data, "reqresdata");
-      users.value = res.data.data.map((user) => user.name);
+      users.value = res.data.data.map((user) => user.name); // Adjusted to use name as per your requirement
     } catch (err) {
       console.error(err);
     }
   };
 
-  const storeUsers = async (users) => {
+  const storeUsers = async (newUsers) => {
     try {
-      await Promise.all(
-        users.map((user) =>
+      // Post each users to reqres.in
+      const newUsersRes = await Promise.all(
+        newUsers.map((user) =>
           axios.post("https://reqres.in/api/users", {
             name: user.name,
-            // email: `${user.name}@webspiders.com`,
+            email: "abc@gmail.com",
           })
         )
       );
-      await getUsers();
+      // Extract the names from the response and add to users.value
+      const addUsers = newUsersRes.map((res) => res.data.name);
+      console.log(addUsers);
+      users.value = [...users.value, ...addUsers];
+      console.log(users);
     } catch (error) {
       console.error(error);
     }
