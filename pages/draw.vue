@@ -1,9 +1,9 @@
 <template>
   <div class="draw">
     <h1>Draw Secret Santa🎅</h1>
-    <!-- <div>
-      <h2 v-for="user in users">{{ user }}</h2>
-    </div> -->
+    <div>
+      <h2 v-for="user in users" :key="user">{{ user }}</h2>
+    </div>
     <button @click="drawNames">Draw</button>
   </div>
 </template>
@@ -17,8 +17,11 @@ const router = useRouter();
 const store = useUsersStore();
 
 const users = ref([]);
-users.value = store.users;
-console.log(users);
+const fetchUsers = async () => {
+  await store.getUsers();
+  users.value = store.users;
+};
+onMounted(fetchUsers);
 
 const drawNames = async () => {
   const shuffledUsers = [...users.value].sort(() => 0.5 - Math.random());

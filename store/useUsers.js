@@ -8,7 +8,8 @@ export const useUsersStore = defineStore("users", () => {
   const getUsers = async () => {
     try {
       const res = await axios.get("https://reqres.in/api/users");
-      users.value = res.data.data.map((user) => user.name); // Adjusted to use name as per your requirement
+      users.value = res.data.data.map((user) => user.first_name); // Adjusted to use name as per your requirement
+      return users;
     } catch (err) {
       console.error(err);
     }
@@ -27,9 +28,7 @@ export const useUsersStore = defineStore("users", () => {
       );
       // Extract the names from the response and add to users.value
       const addUsers = newUsersRes.map((res) => res.data.name);
-      console.log(addUsers);
       users.value = [...users.value, ...addUsers];
-      console.log(users);
     } catch (error) {
       console.error(error);
     }
