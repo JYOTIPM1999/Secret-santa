@@ -5,16 +5,16 @@ export const useUsersStore = defineStore("users", () => {
   const users = ref([]);
   const assignments = ref({});
 
-  const getUsers = async () => {
-    try {
-      const res = await axios.get("https://reqres.in/api/users");
-      users.value = res.data.data.map(
-        (user) => user.first_name + " " + user.last_name
-      ); // Adjusted to use name as per your requirement
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // const getUsers = async () => {
+  //   try {
+  //     const res = await axios.get("https://reqres.in/api/users");
+  //     users.value = res.data.data.map(
+  //       (user) => user.first_name + " " + user.last_name
+  //     ); // Adjusted to use name as per your requirement
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   const storeUsers = async (newUsers) => {
     try {
@@ -41,7 +41,7 @@ export const useUsersStore = defineStore("users", () => {
       });
 
       assignments.value = assignmentsList;
-      console.log(assignments);
+      // console.log(assignments);
     } catch (error) {
       console.error(error);
     }
@@ -49,7 +49,7 @@ export const useUsersStore = defineStore("users", () => {
   return {
     users,
     assignments,
-    getUsers,
+    // getUsers,
     storeUsers,
     storeAssignments,
   };
