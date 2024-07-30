@@ -60,8 +60,8 @@ const drawNames = async () => {
     }
   }
 
-  // console.log("assignments", assignments);
   await store.storeAssignments(assignments);
+  console.log(assignments);
   router.push("/results");
 };
 </script>

@@ -41,6 +41,7 @@ export const useUsersStore = defineStore("users", () => {
       });
 
       assignments.value = assignmentsList;
+      console.log(assignments);
     } catch (error) {
       console.error(error);
     }
