@@ -18,6 +18,12 @@
         </p>
       </div>
     </div>
+    <nuxt-link
+      to="/register"
+      class="bg-blue-500 text-white px-4 py-2 m-2 rounded-lg text-lg sm:text-xl font-semibold shadow-md hover:bg-blue-600 transition duration-200 ease-in-out"
+    >
+      Go to Registration
+    </nuxt-link>
   </div>
 </template>
 
