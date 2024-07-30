@@ -48,6 +48,18 @@ const uniqueNames = () => {
   error.value = "";
   return true;
 };
+
+const submitForm = async () => {
+  if (!uniqueNames()) {
+    return;
+  }
+  try {
+    await store.storeUsers(users.value);
+    router.push("/draw");
+  } catch (err) {
+    console.error(err);
+  }
+};
 </script>
 
 <style scoped>
