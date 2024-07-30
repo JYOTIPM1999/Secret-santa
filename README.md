@@ -20,61 +20,45 @@ This is a Nuxt 3 project to add users, and assignments using ReqRes API. Technol
 #### Home page
 
 
-![Homepage](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483316/Screenshot_2024-04-07_151502_dyhmtk.png)
+![Homepage](https://res.cloudinary.com/dehubjbqm/image/upload/v1722348943/Screenshot_67_xsmrcd.png)
 
 
 #### Register page
 
 
-![success](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151401_duzm85.png)
+![success](https://res.cloudinary.com/dehubjbqm/image/upload/v1722348943/Screenshot_69_jooh3k.png)
 
 
-#### Signup page(Wrong Password)
+#### Register page(Empty Fields)
 
 
-![success](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151425_ls9bwr.png)
+![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1722348942/Screenshot_71_ope2yh.png)
 
 
-#### Signup page(Wrong credentials)
+#### Register page(Unique Names)
 
 
-![success](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151437_wcvyfg.png)
+![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1722348942/Screenshot_70_tqpdyw.png)
 
-#### Signin Page
-
-
-![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151158_swl0m0.png)
+#### Draw Page
 
 
-#### Signin Page(Wrong Password)
+![Success](https://res.cloudinary.com/dehubjbqm/image/upload/v1722348942/Screenshot_72_mda11k.png)
 
 
-![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483312/Screenshot_2024-04-07_151250_ihxppi.png)
+#### Results Page
 
 
-#### Signin Page(Wrong Credentials)
-
-
-![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483312/Screenshot_2024-04-07_151307_lzsddl.png)
-
-
-#### Responsiveness
-
-
-![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483315/Screenshot_2024-04-07_151533_rzeabn.png)
-![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151544_oo5mll.png)
-![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151553_uy7dnp.png)
-![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483314/Screenshot_2024-04-07_151629_wevbts.png)
-
+![Success](https://res.cloudinary.com/dehubjbqm/image/upload/v1722348943/Screenshot_73_uyixeh.png)
 
 
 ## Features
 
-- Users can try to authenticate using Reqres API.
-- The form data is stored in a Redux and localstorage.
-
+- Multiple users can be added using Reqres API.
+- Users and assignments are stored using Reqres API.
+- Reciprocal assignments between users.
 
 ## Tech Stack
 
-**Frontend:** Typescript, Tailwind Css, ReqRes, Axios, React-router-dom
+**Frontend:** NuxtJS, Tailwind CSS, ReqRes, Axios
 
