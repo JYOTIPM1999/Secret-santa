@@ -23,17 +23,46 @@ const fetchUsers = async () => {
 onMounted(fetchUsers);
 
 const drawNames = async () => {
-  const shuffledUsers = [...users.value].sort(() => 0.5 - Math.random());
-  console.log(shuffledUsers);
+  const userList = [...users.value];
+  let assignments = {};
+  let available = [...userList];
 
-  const assignments = {};
+  available.sort(() => 0.5 - Math.random());
+  userList.forEach((user) => {
+    let assigned;
+    do {
+      assigned = available.shift();
+    } while (assigned === user);
+    assignments[user] = assigned;
+  });
 
-  for (let i = 0; i < users.value.length; i++) {
-    assignments[users.value[i]] = shuffledUsers[(i + 1) % shuffledUsers.length];
+  let isValid = false;
+
+  while (!isValid) {
+    // Check for reciprocal assignments
+    isValid = Object.keys(assignments).every(
+      (user) => assignments[assignments[user]] === user
+    );
+
+    if (!isValid) {
+      // If not valid, shuffle the available list again
+      available = [...userList];
+      available.sort(() => 0.5 - Math.random());
+
+      assignments = {};
+      userList.forEach((user) => {
+        let assigned;
+        do {
+          assigned = available.shift();
+        } while (assigned === user);
+        assignments[user] = assigned;
+      });
+    }
   }
-  console.log(assignments);
+
+  // console.log("assignments", assignments);
   await store.storeAssignments(assignments);
-  // router.push("/results");
+  router.push("/results");
 };
 </script>
 
