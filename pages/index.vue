@@ -1,7 +1,14 @@
 <template>
-  <div><p>Hello JPM</p></div>
+  <div class="home">
+    <h1>Welcome to our Secret Santa🎅 App</h1>
+    <nuxt-link to="/register">Go to Registration</nuxt-link>
+  </div>
 </template>
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.home {
+  text-align: center;
+}
+</style>
