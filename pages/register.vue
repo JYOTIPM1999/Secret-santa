@@ -1,12 +1,14 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gray-100 py-10">
-    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
-      <h1 class="text-3xl font-bold text-blue-800 mb-6">Register Users</h1>
-      <form @submit.prevent="submitForm" class="space-y-6">
+    <div class="bg-white shadow-lg rounded-lg p-6 sm:p-8 w-full max-w-lg">
+      <h1 class="text-2xl sm:text-3xl font-bold text-blue-800 mb-6">
+        Register Users
+      </h1>
+      <form @submit.prevent="submitForm" class="space-y-4 sm:space-y-6">
         <div
           v-for="(user, index) in users"
           :key="index"
-          class="flex items-center space-x-4"
+          class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4"
         >
           <input
             v-model="user.name"
@@ -22,7 +24,9 @@
             Remove
           </button>
         </div>
-        <div class="flex space-x-4">
+        <div
+          class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+        >
           <button
             type="button"
             @click="addUser"

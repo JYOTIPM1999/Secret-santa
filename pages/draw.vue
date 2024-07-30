@@ -1,19 +1,21 @@
 <template>
   <div
-    class="draw min-h-screen flex flex-col items-center justify-center bg-gray-100"
+    class="min-h-screen flex flex-col items-center justify-center bg-gray-100 py-10"
   >
-    <h1 class="text-5xl font-extrabold text-blue-700 mb-6">
-      Draw Secret Santa🎅
-    </h1>
     <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
-      <h2
-        v-for="user in users"
-        :key="user"
-        class="text-xl font-medium text-gray-800 mb-2"
-      >
-        <span class="font-bold text-blue-900">Name - </span>
-        <span class="font-bold text-blue-500">{{ user }} </span>
-      </h2>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-700 mb-6">
+        Draw Secret Santa🎅
+      </h1>
+      <div>
+        <h2
+          v-for="user in users"
+          :key="user"
+          class="text-lg sm:text-xl font-medium text-gray-800 mb-2"
+        >
+          <span class="font-bold text-blue-900">Name - </span>
+          <span class="font-bold text-blue-500">{{ user }} </span>
+        </h2>
+      </div>
       <button
         @click="drawNames"
         class="mt-6 w-full bg-blue-600 text-white py-3 rounded-lg text-lg hover:bg-blue-700 transition duration-300"
