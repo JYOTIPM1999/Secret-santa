@@ -1,75 +1,80 @@
-# Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Secret-Santa Assignment
 
-## Setup
+This is a Nuxt 3 project to add users, and assignments using ReqRes API. Technologies used to build this project are Nuxt.js, Pinia, Axios, Tailwind-css.
 
-Make sure to install the dependencies:
 
-```bash
-# npm
-npm install
+## Various Screens
 
-# pnpm
-pnpm install
+ - [Home page(Secured)](https://secret-of-santa.netlify.app/)
+ - [Register page](https://secure-um-dashboard.netlify.app/register)
+ - [Draw page](https://secure-um-dashboard.netlify.app/draw)
+ - [Results page](https://secure-um-dashboard.netlify.app/results)
 
-# yarn
-yarn install
 
-# bun
-bun install
-```
+## API Reference
+ - [Reqres_API](https://reqres.in/api/user)
 
-## Development Server
+## Glimps of the web app
 
-Start the development server on `http://localhost:3000`:
+#### Home page
 
-```bash
-# npm
-npm run dev
 
-# pnpm
-pnpm run dev
+![Homepage](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483316/Screenshot_2024-04-07_151502_dyhmtk.png)
 
-# yarn
-yarn dev
 
-# bun
-bun run dev
-```
+#### Register page
 
-## Production
 
-Build the application for production:
+![success](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151401_duzm85.png)
 
-```bash
-# npm
-npm run build
 
-# pnpm
-pnpm run build
+#### Signup page(Wrong Password)
 
-# yarn
-yarn build
 
-# bun
-bun run build
-```
+![success](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151425_ls9bwr.png)
 
-Locally preview production build:
 
-```bash
-# npm
-npm run preview
+#### Signup page(Wrong credentials)
 
-# pnpm
-pnpm run preview
 
-# yarn
-yarn preview
+![success](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151437_wcvyfg.png)
 
-# bun
-bun run preview
-```
+#### Signin Page
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151158_swl0m0.png)
+
+
+#### Signin Page(Wrong Password)
+
+
+![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483312/Screenshot_2024-04-07_151250_ihxppi.png)
+
+
+#### Signin Page(Wrong Credentials)
+
+
+![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483312/Screenshot_2024-04-07_151307_lzsddl.png)
+
+
+#### Responsiveness
+
+
+![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483315/Screenshot_2024-04-07_151533_rzeabn.png)
+![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151544_oo5mll.png)
+![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483313/Screenshot_2024-04-07_151553_uy7dnp.png)
+![Fill Error](https://res.cloudinary.com/dehubjbqm/image/upload/v1712483314/Screenshot_2024-04-07_151629_wevbts.png)
+
+
+
+## Features
+
+- Users can try to authenticate using Reqres API.
+- The form data is stored in a Redux and localstorage.
+
+
+## Tech Stack
+
+**Frontend:** Typescript, Tailwind Css, ReqRes, Axios, React-router-dom
+
