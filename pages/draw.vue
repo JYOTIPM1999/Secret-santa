@@ -2,14 +2,13 @@
   <div class="draw">
     <h1>Draw Secret Santa🎅</h1>
     <div>
-      <h2 v-for="user in users" :key="user">{{ user }}</h2>
+      <h2 v-for="user in users" :key="user">Name - {{ user }}</h2>
     </div>
-    <button @click="drawNames">Draw</button>
+    <button @click="drawNames">Draw▶️</button>
   </div>
 </template>
 
 <script setup>
-import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { useUsersStore } from "../store/useUsers";
 
@@ -25,14 +24,16 @@ onMounted(fetchUsers);
 
 const drawNames = async () => {
   const shuffledUsers = [...users.value].sort(() => 0.5 - Math.random());
+  console.log(shuffledUsers);
 
   const assignments = {};
 
   for (let i = 0; i < users.value.length; i++) {
     assignments[users.value[i]] = shuffledUsers[(i + 1) % shuffledUsers.length];
   }
+  console.log(assignments);
   await store.storeAssignments(assignments);
-  router.push("/results");
+  // router.push("/results");
 };
 </script>
 
