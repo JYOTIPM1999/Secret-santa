@@ -1,5 +1,5 @@
 <template>
-  <div class="registration">
+  <div class="register">
     <h1>Register Users</h1>
     <form @submit.prevent="submitForm">
       <div v-for="(user, index) in users" :key="index">
@@ -27,6 +27,7 @@ const store = useUsersStore();
 console.log(store);
 
 const users = ref([{ name: "" }]);
+
 const error = ref("");
 
 const addUser = () => {
@@ -50,6 +51,14 @@ const uniqueNames = () => {
 };
 
 const submitForm = async () => {
+  // Check for empty user names
+  const empty = users.value.some((user) => user.name.trim() === "");
+
+  if (empty) {
+    error.value = "All fields must be filled";
+    return;
+  }
+  // Check for unique names
   if (!uniqueNames()) {
     return;
   }
@@ -63,8 +72,7 @@ const submitForm = async () => {
 </script>
 
 <style scoped>
-.registration {
+.register {
   text-align: center;
-  margin-top: 50px;
 }
 </style>

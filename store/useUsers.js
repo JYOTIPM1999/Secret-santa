@@ -8,6 +8,7 @@ export const useUsersStore = defineStore("users", () => {
   const getUsers = async () => {
     try {
       const res = await axios.get("https://reqres.in/api/users");
+      console.log(res.data.data, "reqresdata");
       users.value = res.data.data.map((user) => user.name);
     } catch (err) {
       console.error(err);
@@ -15,7 +16,6 @@ export const useUsersStore = defineStore("users", () => {
   };
 
   const storeUsers = async (users) => {
-    console.log(users[0], "users");
     try {
       await Promise.all(
         users.map((user) =>
@@ -36,7 +36,7 @@ export const useUsersStore = defineStore("users", () => {
         assignment: assignmentsList,
       });
 
-      assignments = assignmentsList;
+      assignments.value = assignmentsList;
     } catch (error) {
       console.error(error);
     }
